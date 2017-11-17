@@ -1,7 +1,15 @@
 import * as Type from './Type';
 
-export function changeMyName() {
+export const selectMake = (id) => {
     return {
-        type: Type.TYPE
+        type: Type.SELECT_MAKE,
+        id
     };
-}
+};
+
+export const selectModel = (id) => {
+    return {
+        type: Type.SELECT_MODEL,
+        id
+    };
+};

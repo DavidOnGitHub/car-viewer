@@ -6,9 +6,11 @@ import Routes from '../Routes';
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Header />
-        <Routes />
+        <div className="content">
+          <Routes />
+        </div>
       </div>
     );
   }

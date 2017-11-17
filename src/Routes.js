@@ -8,13 +8,13 @@ import Make from './components/Make';
 import Model from './components/Model';
 
 const HomeQueries = {
-  carOfTheWeek: () => Relay.QL`query { carOfTheWeek }`
+  viewer: () => Relay.QL`query { viewer }`
 };
 const SearchQueries = {
-  makes: () => Relay.QL`query { makes }`
+  viewer: () => Relay.QL`query { viewer }`
 };
 const ModelQueries = {
-  carOfTheWeek: () => Relay.QL`query { carOfTheWeek }`
+  viewer: () => Relay.QL`query { viewer }`
 };
 
 
@@ -26,9 +26,8 @@ export default () => (
   >
     <Route path="search" component={Search} queries={SearchQueries}/>
     <Route path="make" component={Make}>
-      <Route path="model/:id" component={Model} />
+      <Route path="model/:id" component={Model} queries={ModelQueries}/>
     </Route>
-    <Route path="/" component={Home}/>
-    <Redirect from="*" to="/" />
+    <Route path="/" component={Home} queries={HomeQueries}/>
   </Router>
 );

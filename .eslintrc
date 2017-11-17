@@ -3,17 +3,20 @@
     "browser": true,
     "es6": true
   },
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
   "rules": {
     "quotes": ["warn", "single"],
     "no-debugger": "warn",
     "no-extra-semi": "warn",
     "eqeqeq": "warn",
-    "strict": "warn"
+    "strict": "warn",
+    "import/no-extraneous-dependencies": "error",
+    "no-console": "error",
+    "semi": ["error", "always"]
   }
 }
